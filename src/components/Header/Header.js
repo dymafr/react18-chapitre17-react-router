@@ -1,4 +1,5 @@
 import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -6,7 +7,10 @@ function Header() {
       <div className="flex-fill">
         <strong> React-router </strong>
       </div>
-      <ul className={styles.headerList}></ul>
+      <ul className={styles.headerList}>
+        <Link to="/">Homepage</Link>
+        <Link to="/profile">Profile</Link>
+      </ul>
     </header>
   );
 }
