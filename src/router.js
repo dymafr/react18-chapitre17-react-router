@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: "/PROfile",
+        path: "/profile",
         caseSensitive: true,
         element: <Profile />,
       },

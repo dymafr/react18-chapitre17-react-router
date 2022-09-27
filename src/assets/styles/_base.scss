@@ -35,3 +35,9 @@ input {
 ::placeholder {
   font-size: var(--font-family);
 }
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 5px;
+}
