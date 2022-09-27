@@ -9,7 +9,8 @@ function Header() {
       </div>
       <ul className={styles.headerList}>
         <Link to="/">Homepage</Link>
-        <Link to="/profile">Profile</Link>
+        <Link to="/PROfile">Profile</Link>
+        <Link to="/drgdhfhrdgdr">???</Link>
       </ul>
     </header>
   );
