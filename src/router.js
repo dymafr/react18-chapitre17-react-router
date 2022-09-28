@@ -5,7 +5,7 @@ import Profile from "./pages/Profile/Profile";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import ProfileOverview from "./pages/Profile/pages/ProfileOverview/ProfileOverview";
 import ProfileData from "./pages/Profile/pages/ProfileData/ProfileData";
-import { homepageLoader } from "./loaders/homepageLoader";
+import { profileLoader } from "./loaders/profileLoader";
 import { rootLoader } from "./loaders/rootLoader";
 
 export const router = createBrowserRouter([
@@ -16,12 +16,12 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: homepageLoader,
         errorElement: <ErrorPage />,
         element: <Homepage />,
       },
       {
-        path: "/profile/:id/:name",
+        path: "/profile",
+        loader: profileLoader,
         caseSensitive: true,
         element: <Profile />,
         children: [
@@ -35,10 +35,10 @@ export const router = createBrowserRouter([
           },
         ],
       },
-      {
-        path: "/profile/*",
-        element: <Profile />,
-      },
+      // {
+      //   path: "/profile/*",
+      //   element: <Profile />,
+      // },
     ],
   },
 ]);

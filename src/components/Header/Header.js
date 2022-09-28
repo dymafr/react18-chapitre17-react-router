@@ -19,7 +19,7 @@ function Header() {
         </NavLink>
         <NavLink
           // className={({ isActive }) => (isActive ? "link-active" : "")}
-          to="/profile/123/jean?age=12"
+          to="/profile"
         >
           Profile
         </NavLink>

@@ -1,6 +1,4 @@
-export async function homepageLoader({ params, request }) {
-  const url = new URL(request.url);
-  console.log(url.searchParams.get("name"));
+export async function getRecipes() {
   const response = await fetch("https://restapi.fr/api/recipes");
   if (response.ok) {
     return response;
