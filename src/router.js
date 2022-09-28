@@ -6,11 +6,13 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import ProfileOverview from "./pages/Profile/pages/ProfileOverview/ProfileOverview";
 import ProfileData from "./pages/Profile/pages/ProfileData/ProfileData";
 import { homepageLoader } from "./loaders/homepageLoader";
+import { rootLoader } from "./loaders/rootLoader";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: rootLoader,
     children: [
       {
         index: true,

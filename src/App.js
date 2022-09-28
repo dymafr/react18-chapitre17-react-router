@@ -1,15 +1,22 @@
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import styles from "./App.module.scss";
-import { Outlet, ScrollRestoration, useNavigation } from "react-router-dom";
+import {
+  Outlet,
+  ScrollRestoration,
+  useLoaderData,
+  useNavigation,
+} from "react-router-dom";
 import { useEffect } from "react";
 
 function App() {
-  // const location = useLocation();
   const navigation = useNavigation();
+  const user = useLoaderData();
+
+  console.log(user);
 
   useEffect(() => {
-    console.log(navigation);
+    // console.log(navigation);
   }, [navigation]);
 
   return (
@@ -22,7 +29,7 @@ function App() {
         </h1>
       )}
       <div className="flex-fill">
-        <Outlet />
+        <Outlet context={{ user }} />
       </div>
       <Footer />
       <ScrollRestoration />

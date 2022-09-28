@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useOutletContext } from "react-router-dom";
 
 function Profile() {
   // const { id, name } = useParams();
@@ -13,6 +13,11 @@ function Profile() {
 
   // console.log(id);
   // console.log(name);
+
+  // const user = useLoaderData();
+  const { user } = useOutletContext();
+
+  console.log(user);
 
   return (
     <>
