@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: "/profile/:id",
+        path: "/profile/:id/:name",
         caseSensitive: true,
         element: <Profile />,
         children: [
@@ -30,6 +30,10 @@ export const router = createBrowserRouter([
             element: <ProfileData />,
           },
         ],
+      },
+      {
+        path: "/profile/*",
+        element: <Profile />,
       },
     ],
   },

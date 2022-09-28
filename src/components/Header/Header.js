@@ -1,12 +1,12 @@
 import styles from "./Header.module.scss";
-import { NavLink, useMatch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
-  const matchHomepage = useMatch("/");
-  const matchProfile = useMatch("/profile");
+  // const matchHomepage = useMatch("/");
+  // const matchProfile = useMatch("/profile/:id");
 
-  console.log(matchHomepage);
-  console.log(matchProfile);
+  // console.log(matchHomepage);
+  // console.log(matchProfile);
 
   return (
     <header className={`${styles.header} d-flex flex-row align-items-center`}>
@@ -19,7 +19,7 @@ function Header() {
         </NavLink>
         <NavLink
           // className={({ isActive }) => (isActive ? "link-active" : "")}
-          to="/profile"
+          to="/profile/123/jean?age=12"
         >
           Profile
         </NavLink>
