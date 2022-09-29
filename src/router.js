@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import App from "./App";
 import Homepage from "./pages/Homepage/Homepage";
 import Profile from "./pages/Profile/Profile";
@@ -7,6 +7,8 @@ import ProfileOverview from "./pages/Profile/pages/ProfileOverview/ProfileOvervi
 import ProfileData from "./pages/Profile/pages/ProfileData/ProfileData";
 import { profileLoader } from "./loaders/profileLoader";
 import { rootLoader } from "./loaders/rootLoader";
+import ProfileForm from "./pages/Profile/pages/ProfileForm/ProfileForm";
+import { profileFormAction } from "./actions/profileFormAction";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +34,11 @@ export const router = createBrowserRouter([
           {
             path: "data",
             element: <ProfileData />,
+          },
+          {
+            path: "form",
+            action: profileFormAction,
+            element: <ProfileForm />,
           },
         ],
       },

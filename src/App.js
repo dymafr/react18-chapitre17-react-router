@@ -13,7 +13,7 @@ function App() {
   const navigation = useNavigation();
   const user = useLoaderData();
 
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     // console.log(navigation);
@@ -22,12 +22,12 @@ function App() {
   return (
     <div className={`d-flex flex-column ${styles.appContainer}`}>
       <Header />
-      {navigation.state === "loading" && (
+      {/* {navigation.state === "loading" && (
         <h1>
           Loading{" "}
           {navigation.location.pathname === "/" && <strong>Homepage</strong>}{" "}
         </h1>
-      )}
+      )} */}
       <div className="flex-fill">
         <Outlet context={{ user }} />
       </div>

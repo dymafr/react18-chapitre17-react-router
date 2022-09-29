@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useOutletContext } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function Profile() {
   // const { id, name } = useParams();
@@ -15,9 +15,9 @@ function Profile() {
   // console.log(name);
 
   // const user = useLoaderData();
-  const { user } = useOutletContext();
+  // const { user } = useOutletContext();
 
-  console.log(user);
+  // console.log(user);
 
   return (
     <>
@@ -29,6 +29,9 @@ function Profile() {
         </li>
         <li>
           <NavLink to="data">Data</NavLink>
+        </li>
+        <li>
+          <NavLink to="form">Form</NavLink>
         </li>
       </ul>
       <div className="p-20">
