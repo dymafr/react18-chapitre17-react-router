@@ -1,5 +1,6 @@
 import { Suspense } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Await, NavLink, Outlet, useLoaderData } from "react-router-dom";
+import Recipes from "./components/Recipes/Recipes";
 
 function Profile() {
   // const { id, name } = useParams();
@@ -15,10 +16,8 @@ function Profile() {
   // console.log(id);
   // console.log(name);
 
-  // const user = useLoaderData();
+  const { recipes } = useLoaderData();
   // const { user } = useOutletContext();
-
-  // console.log(user);
 
   return (
     <>
@@ -37,7 +36,11 @@ function Profile() {
       </ul>
       <div className="p-20">
         <h2 className="mb-20">Profile</h2>
+
         <Suspense fallback={<small>Loading</small>}>
+          <Await resolve={recipes} errorElement={<h3>Error fetch</h3>}>
+            <Recipes />
+          </Await>
           <Outlet />
         </Suspense>
       </div>

@@ -1,7 +1,7 @@
 export async function getRecipes() {
   const response = await fetch("https://restapi.fr/api/recipes");
   if (response.ok) {
-    return response;
+    return response.json();
     // throw new Error("Oops");
     // return new Promise((res) => {
     //   setTimeout(() => {
