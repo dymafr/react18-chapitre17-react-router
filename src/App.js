@@ -7,7 +7,7 @@ import {
   useLoaderData,
   useNavigation,
 } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
 function App() {
   const navigation = useNavigation();
@@ -29,7 +29,9 @@ function App() {
         </h1>
       )} */}
       <div className="flex-fill">
-        <Outlet context={{ user }} />
+        <Suspense>
+          <Outlet context={{ user }} />
+        </Suspense>
       </div>
       <Footer />
       <ScrollRestoration />

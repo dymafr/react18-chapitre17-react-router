@@ -1,14 +1,26 @@
-import { createBrowserRouter, redirect } from "react-router-dom";
+import { createBrowserRouter, resolvePath } from "react-router-dom";
+import { lazy } from "react";
 import App from "./App";
-import Homepage from "./pages/Homepage/Homepage";
-import Profile from "./pages/Profile/Profile";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import ProfileOverview from "./pages/Profile/pages/ProfileOverview/ProfileOverview";
-import ProfileData from "./pages/Profile/pages/ProfileData/ProfileData";
 import { profileLoader } from "./loaders/profileLoader";
 import { rootLoader } from "./loaders/rootLoader";
-import ProfileForm from "./pages/Profile/pages/ProfileForm/ProfileForm";
 import { profileFormAction } from "./actions/profileFormAction";
+
+const Homepage = lazy(() => import("./pages/Homepage/Homepage"));
+const Profile = lazy(() => import("./pages/Profile/Profile"));
+const ProfileOverview = lazy(() =>
+  import("./pages/Profile/pages/ProfileOverview/ProfileOverview")
+);
+const ProfileData = lazy(() =>
+  import("./pages/Profile/pages/ProfileData/ProfileData")
+);
+const ProfileForm = lazy(() => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res(import("./pages/Profile/pages/ProfileForm/ProfileForm"));
+    }, 3000);
+  });
+});
 
 export const router = createBrowserRouter([
   {

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 function Profile() {
@@ -36,7 +37,9 @@ function Profile() {
       </ul>
       <div className="p-20">
         <h2 className="mb-20">Profile</h2>
-        <Outlet />
+        <Suspense fallback={<small>Loading</small>}>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );
