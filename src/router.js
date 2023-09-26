@@ -1,26 +1,26 @@
-import { createBrowserRouter, resolvePath } from "react-router-dom";
-import { lazy } from "react";
-import App from "./App";
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import { profileLoader } from "./loaders/profileLoader";
-import { rootLoader } from "./loaders/rootLoader";
-import { profileFormAction } from "./actions/profileFormAction";
+import { createBrowserRouter } from 'react-router-dom';
+import { lazy } from 'react';
+import App from './App';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+import { profileLoader } from './loaders/profileLoader';
+import { rootLoader } from './loaders/rootLoader';
+import { profileFormAction } from './actions/profileFormAction';
 
-const Homepage = lazy(() => import("./pages/Homepage/Homepage"));
-const Profile = lazy(() => import("./pages/Profile/Profile"));
+const Homepage = lazy(() => import('./pages/Homepage/Homepage'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
 const ProfileOverview = lazy(() =>
-  import("./pages/Profile/pages/ProfileOverview/ProfileOverview")
+  import('./pages/Profile/pages/ProfileOverview/ProfileOverview')
 );
 const ProfileData = lazy(() =>
-  import("./pages/Profile/pages/ProfileData/ProfileData")
+  import('./pages/Profile/pages/ProfileData/ProfileData')
 );
 const ProfileForm = lazy(() =>
-  import("./pages/Profile/pages/ProfileForm/ProfileForm")
+  import('./pages/Profile/pages/ProfileForm/ProfileForm')
 );
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     loader: rootLoader,
     children: [
@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: "/profile",
+        path: '/profile',
         loader: profileLoader,
         caseSensitive: true,
         element: <Profile />,
@@ -40,11 +40,11 @@ export const router = createBrowserRouter([
             element: <ProfileOverview />,
           },
           {
-            path: "data",
+            path: 'data',
             element: <ProfileData />,
           },
           {
-            path: "form",
+            path: 'form',
             action: profileFormAction,
             element: <ProfileForm />,
           },

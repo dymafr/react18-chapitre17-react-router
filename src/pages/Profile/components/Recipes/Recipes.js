@@ -1,4 +1,4 @@
-import { useAsyncError, useAsyncValue } from "react-router-dom";
+import { useAsyncValue } from 'react-router-dom';
 
 function Recipes() {
   const recipes = useAsyncValue();
